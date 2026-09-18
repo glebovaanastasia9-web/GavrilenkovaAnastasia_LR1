@@ -44,7 +44,7 @@ Infrastructure и App. Документ адресован участникам 
 
 Тестовые артефакты (тестовый проект, xUnit/MSTest, тестовые данные) и
 вспомогательные артефакты сборки/CI-CD (скрипты, .yml/.ps1/.bat) в
-проекте на данном этапе отсутствуют — учебный проект собирается и
+проекте на данном этапе отсутствуют, учебный проект собирается и
 запускается только вручную из Visual Studio.
 
 Все файлы, отмеченные «нет» в столбце «В Git», проверены через
@@ -87,7 +87,7 @@ Infrastructure и App. Документ адресован участникам 
 - **Назначение:** единая точка доступа окон к смене темы оформления без прямой зависимости от Infrastructure.
 - **Интерфейс:** `void ChangeTheme(int themeIndex)`; поля `MainWindowTheme`, `EngWindowTheme` (int, хранят текущую тему каждого окна).
 - **Формат данных:** индекс темы - `int` (1, 2 или 3 - три предопределённые цветовые палитры).
-- **Соглашения:** Views никогда не обращается к ThemeManager напрямую — только через App.
+- **Соглашения:** Views никогда не обращается к ThemeManager напрямую - только через App.
 
 ### Протокол: ThemeManager.ChangeTheme(Application, int)
 
@@ -99,7 +99,7 @@ Infrastructure и App. Документ адресован участникам 
 
 ## 4. Соглашения об именовании и версионировании
 
-**Именование:** классы и статические классы — PascalCase (`CalculatorService`, `ThemeManager`); интерфейсы - с префиксом `I` (`ICalculatorService`, `IHistoryService`); методы сервисов - `<Глагол><Существительное>` (`AppendEntry`, `LoadHistory`, `SetOperation`); обработчики событий элементов управления - `<Действие>_Click`, совпадают с именем обработчика в XAML; пространства имён соответствуют каталогам (`Calculator.Views`, `Calculator.Services`, `Calculator.Services.Interfaces`, `Calculator.Infrastructure`).
+**Именование:** классы и статические классы - PascalCase (`CalculatorService`, `ThemeManager`); интерфейсы - с префиксом `I` (`ICalculatorService`, `IHistoryService`); методы сервисов - `<Глагол><Существительное>` (`AppendEntry`, `LoadHistory`, `SetOperation`); обработчики событий элементов управления - `<Действие>_Click`, совпадают с именем обработчика в XAML; пространства имён соответствуют каталогам (`Calculator.Views`, `Calculator.Services`, `Calculator.Services.Interfaces`, `Calculator.Infrastructure`).
 
 **Версионирование:** на текущем учебном этапе используется единственная ветка `main`; для сообщений коммитов рекомендуется модель Conventional Commits (например, `docs: add ARTIFACTS.md with project artifacts and protocols`, `refactor: split Calculations into CalculatorService and HistoryService`). Для будущих релизов рекомендовано семантическое версионирование (SemVer, `MAJOR.MINOR.PATCH`) с отметкой релизов тегами Git (`git tag -a vX.Y.Z`).
 
